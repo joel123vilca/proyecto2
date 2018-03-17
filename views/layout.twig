@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <title>blog luz y verdad</title>
@@ -12,23 +13,8 @@
         </div>
       </div>
       <div class="row">
-        <h2>POST</h2>
         <div class="col-md-8">
-          <a class="btn btn-primary" href="<?php echo BASE_URL;?>/admin/posts/create">agregar nuevo post</a>
-          <table class="table">
-            <tr>
-              <th>TITULO</th>
-              <th>EDITAR</th>
-              <th>ELIMINAR</th>
-            </tr>
-          <?php foreach ($blog as $blog) {?>
-            <tr>
-              <td><?echo $blog['titulo'];?></td>
-              <td>editar</td>
-              <td>eliminar</td>
-            </tr>
-          <?}?>
-        </table>
+          {% block content %}{% endblock %}
         </div>
         <div class="col-md-4">
           Las riquezas mal habidas no sirven de nada,
@@ -38,7 +24,7 @@ pero la justicia libra de la muerte.
       <div class="row">
         <div class="col-md-12">
         <footer>
-        
+          <a href="{{ 'admin' | url }}">admin</a>
         </footer>
       </div>
       </div>

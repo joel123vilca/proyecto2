@@ -16,6 +16,7 @@ function render($fileName, $params = []){
   include $fileName;
   return ob_get_clean();
 }
+
 use Phroute\Phroute\RouteCollector;
 $router = new RouteCollector();
 $router->controller('/', App\Controllers\IndexController::class);
