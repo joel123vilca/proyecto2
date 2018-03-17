@@ -14,18 +14,19 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <?php foreach ($blog as $blog) {?>
+          {% for blog in blog %}
           <div class="blog-post">
-            <h2><? echo $blog['titulo'];?></h2>
+            <h2>{{ blog.titulo }}</h2>
             <p>ene 1, 2018 <a href="">joel</a></p>
             <div class="blog-post-image">
               <img src="images/joel.jpg" alt="" style="max-width: 700px; max-height: 600px"  />
             </div>
             <div class="blog-post-content">
-              <? echo $blog['contenido'];?>
+              {{ blog.contenido }}
+
             </div>
           </div>
-          <?}?>
+          {% endfor %}
         </div>
         <div class="col-md-4">
           Las riquezas mal habidas no sirven de nada,
@@ -35,7 +36,7 @@ pero la justicia libra de la muerte.
       <div class="row">
         <div class="col-md-12">
         <footer>
-          <a href="<?php echo BASE_URL;?>/admin">admin</a>
+          <a href="{{ 'admin' | url }}">admin</a>
         </footer>
       </div>
       </div>
